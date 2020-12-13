@@ -15,7 +15,7 @@ public:
             map[key].push_back(s);
         }
         //  想要拷贝元素：for(auto x : range)
-       //   想要修改元素 :  for(auto& x : range)
+       //   想要修改元素 :  for(auto&& x : range)
        //   想要只读元素：for(const auto& x : range) 
         for(const auto& p : map){
             res.push_back(p.second);
