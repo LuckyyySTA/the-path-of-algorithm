@@ -1,18 +1,24 @@
+#include<iostream>
+
+using namespace std;
 class Solution {
 public:
     int balancedStringSplit(string s) {
-        int num = 0, res = 0;
-        for(int i = 0; i < s.length(); i++){
-            if(s[i] == 'L'){
-                num++;
-            }
-            if(s[i] == 'R'){
-                num--;
-            }
-            if(num == 0){
+        int left = 0, right = 0, res = 0;
+        for(char c : s){
+            if( c == 'L')
+                left++;
+            else right++;
+            if( left == right){
                 res++;
+                left = right = 0;
             }
         }
         return res;
     }
 };
+
+int main(){
+    string s = "RLRRLLRLRL";
+    cout<<Solution().balancedStringSplit(s)<<endl;
+}
