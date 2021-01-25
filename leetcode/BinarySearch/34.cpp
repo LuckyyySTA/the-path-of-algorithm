@@ -1,6 +1,3 @@
-#include<iostream>
-#include<vector>
-using namespace std;
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
@@ -47,14 +44,3 @@ private:
     return left;
   }
 };
-void print_vec(const vector<int>& nums){
-  for(int e : nums){
-    cout<<e<<" ";
-  }
-  cout<<endl;
-}
-int main(){
-  vector<int> nums = {5, 7, 7, 8, 8, 10};
-  int target = 8;
-  print_vec(Solution().searchRange(nums,target));
-}
