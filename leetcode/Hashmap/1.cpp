@@ -1,17 +1,21 @@
+#include<iostream>
+#include<unordered_map>
+#include<vector>
+using namespace std;
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         vector<int> res;
-        unordered_map<int,int> mp;
+        unordered_map<int,int> record;
         for(int i = 0; i < nums.size(); i++){
-            auto it = mp.find(target - nums[i]);
-            if(it != mp.end()){
-                res.push_back(it->second);
-                res.push_back(i);
-                break;
-            }
-            mp[nums[i]] = i; 
+            record[nums[i]] = i;
         }
-        return res;
+        for(int i = 0; i < nums.size(); i++){
+            unordered_map<int,int>::iterator iter = record.find(target - nums[i]);
+            if(iter != record.end() && iter->second != i){
+                return {i, iter->second};
+            }
+        }
+        throw invalid_argument("the input has no solution");
     }
 };
