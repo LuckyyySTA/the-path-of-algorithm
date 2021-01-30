@@ -9,10 +9,9 @@ int main(){
         if(str[i] == '-'){
             continue;
         }
-        if((i+1)%3 == str.length() % 3 && i != str.length() - 1){
+        if((i + 1)%3 == str.length()%3 && i != str.length() - 1){
             cout<<",";
         }
     }
-    
     return 0;
 }
