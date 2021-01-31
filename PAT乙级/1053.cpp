@@ -24,7 +24,7 @@ int main(){
             Empty++;
         }
     }
-    cout<<maybeEmpty<<" "<<Empty<< " "<<num<<endl;
+    // cout<<maybeEmpty<<" "<<Empty<< " "<<num<<endl;
     printf("%.1f%% %.1f%%", ((maybeEmpty-Empty)*100)/num , (Empty*100)/num);
     return 0;
 }
