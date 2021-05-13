@@ -1,10 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-int n, m;
-const int MAX = 100;
-char arr[MAX+1][MAX+1]
+char arr[101][101];
 int main(){
+    int n, m;
     cin >> n >> m;
     for(int i = 1; i <= n ;i++){
         for(int j = 1; j <= m; j++){
@@ -28,7 +26,12 @@ int main(){
         }
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= m; j++){
-            cout<<res[i][j];
+            if(arr[i][j] == '*'){
+                cout<<arr[i][j];
+            }
+            else{
+                cout<<res[i][j];
+            }
         }
         cout<<endl;
     }
